@@ -8,21 +8,25 @@ const AddExpenseForm = () => {
   // Exercise: Create name and cost to state variables
   const [name, setName] = useState<string>("");  // Explicit type for name
   const [cost, setCost] = useState<number>(0);  
+  const [num, setNum] = useState<number>(1);
+
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const newExpense = {
-      id: "1",  
+      id: num.toString(),  
       name: name,
       cost: cost,
     };
+    console.log(num);
 
     // Exercise: Add add new expense to expenses context array
     setExpenses([...expenses, newExpense]);
 
     setName("");
     setCost(0);
+    setNum(num + 1);
 };
 
 
