@@ -17,12 +17,12 @@ export const AppContext = createContext<AppContextType>(initialState);
 
 export const AppProvider = (props: any) => {
   const [expenses, setExpenses] = useState<Expense[]>(initialState.expenses);
-
   return (
     <AppContext.Provider
       value={{
         expenses: expenses,
         setExpenses: setExpenses,
+        
       }}
     >
       {props.children}
